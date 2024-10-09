@@ -1,22 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Document</title>
-</head>
-<body>
-  <div class="container">
-  <header>Header</header>
-  <main>
-    <h1 class="game-title">Hello <span id="interactive-word">World</span>!</h1>
-    <h2>Welcome to your deployed site!</h2>
-  </main>
-  <footer>Footer</footer>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
+  </head>
+  <body id="corpo">
+    <div>
+      <model-viewer
+        id="model-viewer"
+        src="https://cdn.glitch.global/0e71ae22-72db-41f0-be09-a41ca0066570/batpod-transformed.glb?v=1728399879651"
+        alt="Arkhanm"
+        shadow-intensity="3.8"
+        camera-controls
+        exposure="2.5"
+        loading="lazy"
+        auto-rotate
+        interpolation-decay="100"
+        shadow-softness="1.2"
+        min-camera-orbit="auto 85deg auto"
+        max-camera-orbit="auto 90deg auto"
+        environment-image="https://cdn.glitch.com/26f00b29-51b7-4811-9ca7-3f1c898bb4b3%2Faircraft_workshop_01_1k.hdr"
+        oncontextmenu="return false;"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        tone-mapping="neutral"
+        camera-orbit="-140.9deg 88.63deg 168m"
+        camera-target="0m -16.87m 0m"
+        field-of-view="55deg"
+        disable-zoom
+        disable-pan
+      >
+        <button
+          class="Hotspot"
+          slot="hotspot-1"
+          data-position="93.29377799891323m -56.68653078402422m 491.1181125938986m"
+          data-normal="0.895173573549084m 0.36646583040858327m 0.25370665809613685m"
+          data-visibility-attribute="visible"
+          data-orbit="50.94862deg 24.56856deg 0.06545582m"
+          data-target="-0.08786772449997013m 0.8735665888411929m 400.242048772877014m"
+          data-fov="6.91deg"
+        >
+          <div class="HotspotAnnotation" onclick="annotationClicked(this)">
+            Fire system
+          </div></button
+        ><button
+          class="Hotspot"
+          slot="hotspot-2"
+          data-position="55.38660732979233m -39.25058010159808m -249.60729819718438m"
+          data-normal="1m 2m 5.5511151231257815e-17m"
+          data-orbit="120.94862deg 0.56856deg -110.86545582m"
+          data-target="0.03323465608204483m -40.7456965277218954m -240.9633126732252862m"
+          data-fov="28.91deg"
+          data-visibility-attribute="visible"
+        >
+          <div class="HotspotAnnotation" onclick="annotationClicked(this)">
+            Smooth ride
+          </div></button
+        ><button
+          class="Hotspot"
+          slot="hotspot-3"
+          data-position="-84.136714693433m -22.225550443789437m -28.68155997039069m"
+          data-normal="5.551115123125783e-17m 0.5734620649472875m -0.8192321161101982m"
+          data-orbit="-120.94862deg 0.56856deg 0.06545582m"
+          data-target="0m 2m 4m"
+          data-fov="55.91deg"
+          data-visibility-attribute="visible"
+        >
+          <div class="HotspotAnnotation" onclick="annotationClicked(this)">
+            Powerful engine
+          </div>
+        </button>
+        
+        <effect-composer>
+          <ssao-effect
+            min-distance="0.5"
+            max-distance="2"
+            opacity="1"
+            strength="300"
+          ></ssao-effect>
+          <color-grade-effect
+            contrast="0"
+            saturation="0.1"
+            opacity="1"
+          ></color-grade-effect>
+          <bloom-effect
+            strength="1"
+            opacity="1"
+            threshold="0.01"
+          ></bloom-effect>
+        </effect-composer>
+        
+      </model-viewer>
+
+      <div id="logo">
+        <img
+          src="https://cdn.glitch.global/0e71ae22-72db-41f0-be09-a41ca0066570/Batman%20Begins%20Icon.svg?v=1728393324960"
+          width="80px"
+          alt="Batman Begins Icon"
+        />
+        <p>arkham <span>motorsports</span></p>
+      </div>
+
+      <div id="instrucoes">
+        Design by
+        <a href="https://www.andersonmancini.com" target="_blank" rel="noopener"
+          >Anderson Mancini.</a
+        >
+        <a
+          href="https://sketchfab.com/3d-models/batpod-batman-4bafed3b08d74541aa1ed89da366f831"
+          target="_blank" rel="noopener"
+          >Model credits</a
+        ><br />
+        Camera control credits:
+        <a href="https://cutt.ly/MY1TLjV" target="_blank" rel="noopener"
+          >https://cutt.ly/MY1TLjV</a
+        >
+        <br />
+        Further Edits by Vernell Clark
+        <a href="https://github.com/VCGithubCode" target="_blank" rel="noopener"
+          >Vernell's Github</a
+        >
+      </div>
+
+      <h1 id="nome_produto">2025 KINIGHT RIDER MOTORCYCLE</h1>
+      <div id="footer">
+        <h2 id="detalhes">
+          A futuristic ride combining cutting-edge AI, sleek design, and
+          powerful performance. With advanced tech and self-driving
+          capabilities, it’s built for the ultimate thrill on the road.
+        </h2>
+        <p>
+          Click on the items to zoom in or take a different vantage point. Click and drag to rotate the bike.
+        </p>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"
+    ></script>
+    
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects/dist/model-viewer-effects.min.js"
+    ></script>
+    
+    <script type="module" src="cameraControlsModel.js"></script>
+
+    <script>
+      const mv = document.querySelector("#model-viewer");
+
+      const annotationClicked = (a) => {
+        let ds = a.parentNode.dataset;
+
+        mv.cameraTarget = ds.target;
+
+        mv.cameraOrbit = ds.orbit;
+
+        if (ds.fov !== undefined) mv.fieldOfView = ds.fov;
+      };
+    </script>
+    
+  </body>
 </html>
